@@ -16,7 +16,7 @@ The two original mods conflict when installed together: both patch the shared ut
 
 This project merges them into **one mod**:
 
-- Single jar, single mod id (`mekanism_empowered`) — no separate Core dependency;
+- Single jar, single mod id (`mekanism_empowered_unleashed`) — no separate Core dependency;
 - The entire codebase unified in Kotlin;
 - Injection points redesigned to never overlap, so both layers' effects stack properly.
 
@@ -35,7 +35,7 @@ Targets vanilla Mekanism only (1.21.1 / 10.7.19.x).
 
 | File | Required | Notes |
 |---|---|---|
-| `MekanismEmpowered-1.21.1-21.1-1.0.0.jar` | ✅ | This mod (single file) |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.0.jar` | ✅ | This mod (single file) |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin runtime |
 | Mekanism 1.21.1 (vanilla 10.7.19.x) | ✅ | Base dependency |
 
@@ -45,7 +45,7 @@ Targets vanilla Mekanism only (1.21.1 / 10.7.19.x).
 
 ## Configuration
 
-Config file: `config/mekanism_empowered-general.toml`
+Config file: `config/mekanism_empowered_unleashed-general.toml`
 
 | Option | Default | Range | Purpose |
 |---|---|---|---|

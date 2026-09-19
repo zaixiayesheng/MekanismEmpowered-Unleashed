@@ -1,7 +1,7 @@
 # 工程说明与变更记录
 
 本仓库是 **Mekanism: Empowered** 与 **Mekanism Unleashed** 的合并版。
-单一模组（mod id `mekanism_empowered`），面向 Minecraft 1.21.1 / NeoForge 21.1，
+单一模组（mod id `mekanism_empowered_unleashed`），面向 Minecraft 1.21.1 / NeoForge 21.1，
 只适配原版 Mekanism（10.7.19.x）。
 
 署名与许可证（MIT）：
@@ -51,6 +51,6 @@ JDK 21，`gradlew build`。
 
 - `MixinMekanismArmorMaterials` 的目标 `lambda$static$7` 是编译期编号，Mekanism
   更新后可能失效（仅影响附魔开关）。
-- 存档中新增升级沿用 Empowered 的独立 NBT 命名空间 `mekanism_empowered_core:*`，
-  虽然 mod id 已合并，旧档数据不受影响。
+- 存档中新增升级使用独立 NBT 命名空间 `mekanism_empowered_unleashed:*`，
+  与 mod id 同步改名后，1.0.0 之前的测试存档中的强化升级会丢失（原版升级不受影响）。
 - `en_us.json` 由 datagen 生成，重跑 datagen 会重新生成（配置键自动带出，无需手工维护）。

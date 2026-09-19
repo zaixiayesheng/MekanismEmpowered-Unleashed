@@ -7,7 +7,7 @@ issueTrackerURL="${issue_tracker_url}"
 config = "${mod_id}.mixins.json"
 
 [[mixins]]
-config = "mekanism_empowered_core.mixins.json"
+config = "mekanism_empowered_unleashed_core.mixins.json"
 
 ${access_transformers}
 

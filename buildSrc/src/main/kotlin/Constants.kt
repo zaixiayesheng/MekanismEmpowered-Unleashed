@@ -3,9 +3,9 @@ import org.gradle.jvm.toolchain.JvmVendorSpec
 
 object Constants {
     object Mod {
-        const val ID = "mekanism_empowered"
-        const val NAME = "Mekanism: Empowered"
-        const val DESCRIPTION = "An addon mod that empowers Mekanism. Merged with Mekanism Unleashed."
+        const val ID = "mekanism_empowered_unleashed"
+        const val NAME = "Mekanism: Empowered Unleashed"
+        const val DESCRIPTION = "The conflict-free merge of Mekanism: Empowered and Mekanism Unleashed."
         const val LICENSE = "MIT"
         const val VERSION = "21.1-1.0.0"
         const val GROUP = "dev.lapis256"

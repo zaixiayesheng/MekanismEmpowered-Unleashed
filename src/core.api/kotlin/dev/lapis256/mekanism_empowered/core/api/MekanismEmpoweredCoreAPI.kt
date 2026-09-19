@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory
 
 
 object MekanismEmpoweredCoreAPI {
-    const val MOD_ID = "mekanism_empowered_core"
-    const val MOD_NAME = "Mekanism: Empowered Core"
+    const val MOD_ID = "mekanism_empowered_unleashed"
+    const val MOD_NAME = "Mekanism: Empowered Unleashed"
 
     val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
 

@@ -16,7 +16,7 @@
 
 本项目把两者**合并为一个模组**：
 
-- 单一 jar、单一 mod id（`mekanism_empowered`），不再需要独立的 Core 前置；
+- 单一 jar、单一 mod id（`mekanism_empowered_unleashed`），不再需要独立的 Core 前置；
 - 全部代码统一为 Kotlin；
 - 注入点重新设计为互不重叠，两层效果按顺序相乘，天然兼容。
 
@@ -35,7 +35,7 @@
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `MekanismEmpowered-1.21.1-21.1-1.0.0.jar` | ✅ | 本模组（唯一文件） |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.0.jar` | ✅ | 本模组（唯一文件） |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin 运行时前置 |
 | Mekanism 1.21.1（官方 10.7.19.x）| ✅ | 本体依赖 |
 
@@ -45,7 +45,7 @@
 
 ## 配置
 
-配置文件：`config/mekanism_empowered-general.toml`
+配置文件：`config/mekanism_empowered_unleashed-general.toml`
 
 | 配置项 | 默认值 | 范围 | 作用 |
 |---|---|---|---|
