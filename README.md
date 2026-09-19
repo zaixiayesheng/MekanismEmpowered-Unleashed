@@ -35,7 +35,7 @@
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.0.jar` | ✅ | 本模组（唯一文件） |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.1.jar` | ✅ | 本模组（唯一文件） |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin 运行时前置 |
 | Mekanism 1.21.1（官方 10.7.19.x）| ✅ | 本体依赖 |
 
@@ -77,6 +77,14 @@
 | 注册表阶段读取未加载的配置导致崩溃 | 全部配置读取点加安全回退（默认值） |
 | `MixinModifyRecalculationTarget$Energy` 字节码模式脆弱 | 改为 RETURN 注入 + 虚方法重放，版本无关 |
 | 两个 mod 三个文件 | 合并为单一 mod、单一 jar |
+
+## 更新日志
+
+### 21.1-1.0.1
+
+- 修复强化升级必须按顺序插入才生效的问题，现在无论先插哪个都立即生效。
+- 修复泵、流体装填器、公式装配器、数字矿机插满速度升级后仍然每 tick 只干一次的问题，现在能一 tick 干多次，最多 128 次。
+- 修复 MekaJadeUpgrades 显示增强升级显示异常。
 
 ## 构建
 
