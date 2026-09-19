@@ -29,7 +29,10 @@ import org.spongepowered.asm.mixin.injection.At;
         TileEntityRotaryCondensentrator.class,
     },
     targets = {
-        "com.jerry.mekaf.common.tile.factory.TileEntityAdvancedFactoryBase",
+        // 注意：mekaf 的 TileEntityAdvancedFactoryBase.recalculateUpgrades 里没有
+        // Math.pow（只有 getTicks/getOperationsPerTick），放这里会注入失败；
+        // 它的速度重算由 MixinModifyRecalculationTarget$Speed 负责。
+        "com.jerry.mekaf.common.tile.factory.base.TileEntityChemicalToChemicalFactory",
         "com.jerry.meklm.common.tile.machine.TileEntityLargeChemicalInfuser",
         "com.jerry.meklm.common.tile.machine.TileEntityLargeElectrolyticSeparator",
         "com.jerry.meklm.common.tile.machine.TileEntityLargePigmentMixer",
@@ -37,11 +40,9 @@ import org.spongepowered.asm.mixin.injection.At;
         "com.jerry.meklm.common.tile.machine.TileEntityLargeSolarNeutronActivator",
 
         "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraCentrifugingFactory",
-        "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraChemicalInfusingFactory",
         "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraWashingFactory",
 
         "io.github.masyumero.emextras.common.integration.mekaf.tile.factory.TileEntityEMExtraCentrifugingFactory",
-        "io.github.masyumero.emextras.common.integration.mekaf.tile.factory.TileEntityEMExtraChemicalInfusingFactory",
         "io.github.masyumero.emextras.common.integration.mekaf.tile.factory.TileEntityEMExtraWashingFactory"
     },
     remap = false

@@ -51,12 +51,18 @@ class MixinModifyRecalculationTarget {
         },
         targets = {
             "com.jerry.mekextras.common.tile.factory.TileEntityExtraFactory",
-            "com.jerry.mekextras.common.tile.factory.TileEntityItemStackChemicalToItemStackExtraFactory",
+            "com.jerry.mekextras.common.tile.factory.TileEntityExtraItemStackChemicalToItemStackFactory",
             "com.jerry.mekextras.common.tile.machine.TileEntityAdvancedElectricPump",
-            "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraAdvancedBase",
+            "com.jerry.mekextras.common.integration.mekaf.tile.factory.base.TileEntityExtraAdvancedFactoryBase",
             "com.jerry.mekextras.common.integration.mekmm.tile.factory.TileEntityExtraMoreMachineFactory",
+            "com.jerry.mekextras.common.integration.mekmm.tile.factory.TileEntityExtraPlantingFactory",
+            "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraCentrifugingFactory",
+            "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraDissolvingFactory",
+            "com.jerry.mekextras.common.integration.mekaf.tile.factory.TileEntityExtraWashingFactory",
 
-            "com.jerry.mekaf.common.tile.factory.TileEntityAdvancedFactoryBase",
+            "com.jerry.mekaf.common.tile.factory.base.TileEntityAdvancedFactoryBase",
+            "com.jerry.mekaf.common.tile.factory.base.TileEntityChemicalToChemicalFactory",
+            "com.jerry.mekaf.common.tile.factory.TileEntityDissolvingFactory",
             "com.jerry.mekmm.common.tile.factory.TileEntityMoreMachineFactory",
             "com.jerry.meklm.common.tile.machine.TileEntityLargeChemicalInfuser",
             "com.jerry.meklm.common.tile.machine.TileEntityLargeElectrolyticSeparator",
@@ -69,7 +75,7 @@ class MixinModifyRecalculationTarget {
             "io.github.masyumero.emextras.common.integration.mekaf.tile.factory.TileEntityEMExtraAdvancedBase",
             "io.github.masyumero.emextras.common.integration.mekmm.tile.factory.TileEntityEMExtraMoreMachineFactory",
 
-            "com.fxd927.mekanismelements.common.tile.prefab.MSTileEntityProgressMachine"
+            "fixdol.mekanismelements.common.tile.prefab.MSTileEntityProgressMachine"
         },
         remap = false
     )

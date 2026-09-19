@@ -115,6 +115,11 @@ dependencies {
                 prefer(this.toString())
             }
         }
+
+        // 【内嵌兼容子模组】jar-in-jar 携带只注册旧 id 的微型 mod
+        // （compat 子工程），专门修复 MekaJade Upgrades 的图标问题；
+        // 主 mod 保持唯一 id。
+        jarJar(project(":compat"))
     }
 
     run {
@@ -302,6 +307,9 @@ val mainModDependencies = baseDependencies.toMutableList().apply {
     add(ModDep.optional("mekmm", "1.3.3".gte()))
     add(ModDep.optional("emextras", "1.1.1".gte()))
     add(ModDep.incompatible("mekanism_unleashed", "0.0.0".gte(), "Incompatible Mixins"))
+    // 无用之物：其通用机械增强与本模组公式/上限/显示全面冲突，
+    // 经字节码级排查与实测后决定不兼容（FML 直接拒绝两者共存）。
+    add(ModDep.incompatible("useless_mod", "0.0.0".gte(), "Conflicting Mekanism upgrade overrides"))
 }
 
 // 【合并改动】单一元数据任务；at 参数让 mods.toml 声明 core 源码集里的访问转换器
