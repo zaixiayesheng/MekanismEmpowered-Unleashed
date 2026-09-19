@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mekanism_empowered:item/advanced_gauge_dropper"
+  }
+}

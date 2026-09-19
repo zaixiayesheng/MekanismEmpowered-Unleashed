@@ -1,0 +1,40 @@
+[versions]
+plugin_kotlin = "2.4.0"
+plugin_moddev = "2.0.134"
+
+
+minecraft = "1.21.1"
+neoforge = "21.1.217"
+kotlinForForge = "5.12.0"
+parchmentmc = "2024.11.17"
+
+easyNestConfig = "4.0.0"
+jei = "19.21.0.247"
+mekanism = "1.21.1-10.7.19.85"
+mekanismExtras = "7921191" # 1.4.0
+igleelib = "7000755" # 1.2.7
+evolvedMekanism = "7321395" # 1.2.1-fix2
+mekanismElements = "7696139" # 2.3
+mekasnismMoreMachine = "7919872" # 1.3.3
+evolvedMekanismExtras = "7673420" # 1.1.1
+chemlibMekanized = "7710816" # 2.2.0
+
+
+[libraries]
+kotlinForForge = { module = "thedarkcolour:kotlinforforge-neoforge", version.ref = "kotlinForForge" }
+
+easyNestConfig = { module = "dev.lapis256:EasyNestConfig", version.ref = "easyNestConfig" }
+jei = { module = "mezz.jei:jei-1.21.1-neoforge", version.ref = "jei" }
+mekanism = { module = "mekanism:Mekanism", version.ref = "mekanism" }
+mekanismExtras = { module = "curse.maven:mekanism-extras-1026040", version.ref = "mekanismExtras" }
+igleelib = { module = "curse.maven:iglee-library-541199", version.ref = "igleelib" }
+evolvedMekanism = { module = "curse.maven:evolved-mekanism-1230085", version.ref = "evolvedMekanism" }
+mekanismElements = { module = "curse.maven:mekanism-elements-1103224", version.ref = "mekanismElements" }
+mekanismMoreMachine = { module = "curse.maven:mekanism-more-machine-1275257", version.ref = "mekasnismMoreMachine" }
+evolvedMekanismExtras = { module = "curse.maven:evolved-mekanism-extras-1268159", version.ref = "evolvedMekanismExtras"}
+chemlibMekanized = { module = "curse.maven:chemlib-mekanized-1463366", version.ref = "chemlibMekanized" }
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin_kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin_kotlin" }
+moddev = { id = "net.neoforged.moddev", version.ref = "plugin_moddev" }

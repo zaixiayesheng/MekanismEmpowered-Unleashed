@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "tag": "mekanism:alloys/atomic"
+    },
+    "c": {
+      "tag": "c:dusts/gold"
+    },
+    "g": {
+      "item": "mekanism:structural_glass"
+    },
+    "h": {
+      "item": "mekanism:hdpe_sheet"
+    }
+  },
+  "pattern": [
+    "hgh",
+    "aca",
+    "hgh"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_empowered:upgrade_empowered_energy"
+  }
+}

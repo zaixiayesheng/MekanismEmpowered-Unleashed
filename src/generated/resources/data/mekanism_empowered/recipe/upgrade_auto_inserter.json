@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "tag": "c:alloys/advanced"
+    },
+    "c": {
+      "item": "minecraft:sticky_piston"
+    },
+    "g": {
+      "tag": "c:glass_blocks"
+    }
+  },
+  "pattern": [
+    " g ",
+    "aca",
+    " g "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_empowered:upgrade_auto_inserter"
+  }
+}

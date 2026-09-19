@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "a": {
+      "tag": "mekanism:alloys/atomic"
+    },
+    "b": {
+      "item": "mekanism_empowered:elite_gauge_dropper"
+    }
+  },
+  "pattern": [
+    "a",
+    "b"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_empowered:ultimate_gauge_dropper"
+  }
+}
