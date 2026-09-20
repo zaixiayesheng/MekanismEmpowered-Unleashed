@@ -35,7 +35,7 @@
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.2.jar` | ✅ | 本模组（唯一文件） |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.3.jar` | ✅ | 本模组（唯一文件） |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin 运行时前置 |
 | Mekanism 1.21.1（官方 10.7.19.x）| ✅ | 本体依赖 |
 
@@ -79,6 +79,11 @@
 | 两个 mod 三个文件 | 合并为单一 mod、单一 jar |
 
 ## 更新日志
+
+### 21.1-1.0.3
+
+- 移除了内嵌的旧 id 兼容子模组（桥接），主 jar 恢复单一 mod id
+- MekaJade 的升级图标支持改由 MekaJade Upgrades Fixed 直接适配，不再需要内置桥接
 
 ### 21.1-1.0.2
 

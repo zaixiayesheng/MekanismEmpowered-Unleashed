@@ -115,11 +115,6 @@ dependencies {
                 prefer(this.toString())
             }
         }
-
-        // 【内嵌兼容子模组】jar-in-jar 携带只注册旧 id 的微型 mod
-        // （compat 子工程），专门修复 MekaJade Upgrades 的图标问题；
-        // 主 mod 保持唯一 id。
-        jarJar(project(":compat"))
     }
 
     run {
