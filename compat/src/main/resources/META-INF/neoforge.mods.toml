@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/zaixiayesheng/MekanismEmpowered-Unleashed/is
 # 专治 MekaJade Upgrades 等写死旧 id 检查的附属（图标显示为空气方块问题）。
 [[mods]]
 modId="mekanism_empowered"
-version="1.0.0"
+version="21.1-1.2.2"
 displayName="Mekanism: Empowered (compat)"
 displayURL="https://github.com/zaixiayesheng/MekanismEmpowered-Unleashed"
 authors="Lapis256, WhitePhant0m, zaixiayesheng"

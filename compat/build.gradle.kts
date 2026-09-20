@@ -11,7 +11,10 @@ plugins {
 
 base {
     archivesName = "mekanism-empowered-compat"
-    version = "1.0.0"
+    // 版本取 21.1-1.2.2：有第三方模组（如 productivebeesgenesis）写死检查
+    // mekanism_empowered >= [21.1-1.2.2,)，版本过低会触发 FML
+    // "Unsupported installed optional dependencies" 报错。
+    version = "21.1-1.2.2"
     group = "dev.zaixiayesheng"
 }
 
