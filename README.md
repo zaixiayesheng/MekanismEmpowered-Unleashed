@@ -35,7 +35,7 @@
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.1.jar` | ✅ | 本模组（唯一文件） |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.2.jar` | ✅ | 本模组（唯一文件） |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin 运行时前置 |
 | Mekanism 1.21.1（官方 10.7.19.x）| ✅ | 本体依赖 |
 
@@ -79,6 +79,10 @@
 | 两个 mod 三个文件 | 合并为单一 mod、单一 jar |
 
 ## 更新日志
+
+### 21.1-1.0.2
+
+- 修复了资源蜜蜂：创世（Productive Bees Genesis）启动时把本模组误判为不支持的依赖并报错的问题
 
 ### 21.1-1.0.1
 
