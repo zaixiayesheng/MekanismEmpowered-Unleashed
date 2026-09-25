@@ -35,13 +35,27 @@
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.3.jar` | ✅ | 本模组（唯一文件） |
+| `MekanismEmpoweredUnleashed-1.21.1-21.1-1.0.4.jar` | ✅ | 本模组（唯一文件） |
 | `kotlinforforge-5.12.0-all.jar` | ✅ | Kotlin 运行时前置 |
 | Mekanism 1.21.1（官方 10.7.19.x）| ✅ | 本体依赖 |
 
 - 平台：NeoForge 21.1.x，Minecraft 1.21.1
 - **不要与原版同时安装**：合并版已包含 `mekanism-unleashed` 和 `mekanism-empowered` 的全部功能，原版两者都不要装
 - `-sources.jar`、`-api.jar` 为开发者配套，无需安装
+
+## 与无用之物（UselessMod）共存
+
+1.0.3 及以前本模组在元数据里声明 `useless_mod` 不兼容（FML 会直接拒绝启动）。1.0.4 起改为**共存**，由本模组把它与本模组重合的那部分接管掉：
+
+| 冲突点 | 无用之物的做法 | 本模组的处理 |
+|---|---|---|
+| 升级公式（`MekanismUtils` 的 `getTicksD` / `getEnergyPerTick` / `getMaxEnergy`） | 在 HEAD 直接 `setReturnValue` + cancel | 本模组的同类回调**优先级更低（500）**：Mixin 按优先级升序应用，越低越先执行，先 cancel 者胜 → 我们的回调先跑，它的再也执行不到 |
+| 升级效果文案（`UpgradeUtils` 的 `getExpScaledInfo` / `getMultScaledInfo`） | 同样是 `@Overwrite` | 本模组用**优先级 2000**：Mixin 对 `@Overwrite` 的判定是"优先级不低于前者才跳过"，也就是优先级高的一方能把方法抢过来 |
+| 弹出延迟（`TileComponentEjector#outputItems`） | 在 RETURN 把 `tickDelay` 写成 0（每 tick 都弹出） | 本模组在同一个返回点、以更晚执行的顺序再写回本模组算出的值（只在装了无用之物时才动手） |
+| 四台机器的"每 tick 多件" | 同点位的补次回调读机器字段 | 本模组把机器字段钳在 ≥ 1，对方的 `min(-ticks, 128)` 恒 ≤ 0，天然空转 |
+| 升级上限（改 `Upgrade` 枚举构造器参数） | 把 `maxStack` 写进枚举字段 | 不用管：Mekanism 的 `maxStack` 是 private，全源码只经 `getMax()` 读取，而 `getMax()` 由本模组接管 |
+
+无用之物的其余功能（合金炉、牛肉工具、矿物生成器等）不受影响。注意这两处优先级方向**相反**，改动时别搞混：**回调顺序看"越低越先"，`@Overwrite` 归属看"越高越强"。**
 
 ## 配置
 
@@ -79,6 +93,11 @@
 | 两个 mod 三个文件 | 合并为单一 mod、单一 jar |
 
 ## 更新日志
+
+### 21.1-1.0.4
+
+- 恢复与无用之物（UselessMod）共存，不再声明不兼容
+- 与无用之物同时安装时，升级公式、升级效果文案与弹出延迟由本模组接管，强化升级、Fast Item Eject 等升级正常生效
 
 ### 21.1-1.0.3
 

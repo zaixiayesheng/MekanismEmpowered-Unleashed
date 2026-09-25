@@ -19,9 +19,19 @@ import kotlin.math.pow
  * Mixin 只碰 `getItem` / `getInfo`，与本类的两个方法无交集，
  * 不会冲突。
  *
+ * 与无用之物（UselessMod）并存：它的 `UpgradeUtilsMixin` 也 `@Overwrite`
+ * 了同样这两个方法。Mixin 对 `@Overwrite` 冲突的判定是「优先级不低于前者
+ * 才跳过」（`MixinApplicatorStandard#checkMethodOverwrite`），也就是说
+ * **优先级更高的一方可以把方法抢过来**，所以这里给 2000（高于默认 1000）
+ * 让我们最终生效。
+ *
+ * 注意方向：这与"同一个注入点上的回调顺序"正好相反 —— 回调是按优先级
+ * **升序应用**、越低越先执行（先 cancel 者胜），见 MixinMekanismUtils 的
+ * priority = 500。两处别搞混。
+ *
  * 合并自 Mekanism Unleashed (WhitePhant0m)。
  */
-@Mixin(value = [UpgradeUtils::class], remap = false)
+@Mixin(value = [UpgradeUtils::class], remap = false, priority = 2000)
 class MixinUpgradeUtils {
 
     /*

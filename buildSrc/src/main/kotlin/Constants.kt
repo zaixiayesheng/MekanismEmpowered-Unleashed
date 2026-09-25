@@ -7,7 +7,7 @@ object Constants {
         const val NAME = "Mekanism: Empowered Unleashed"
         const val DESCRIPTION = "The conflict-free merge of Mekanism: Empowered and Mekanism Unleashed."
         const val LICENSE = "MIT"
-        const val VERSION = "21.1-1.0.3"
+        const val VERSION = "21.1-1.0.4"
         const val GROUP = "dev.lapis256"
         const val AUTHOR = "Lapis256, WhitePhant0m, zaixiayesheng"
         const val REPOSITORY_URL = "https://github.com/zaixiayesheng/MekanismEmpowered-Unleashed"

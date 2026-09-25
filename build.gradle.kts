@@ -302,9 +302,9 @@ val mainModDependencies = baseDependencies.toMutableList().apply {
     add(ModDep.optional("mekmm", "1.3.3".gte()))
     add(ModDep.optional("emextras", "1.1.1".gte()))
     add(ModDep.incompatible("mekanism_unleashed", "0.0.0".gte(), "Incompatible Mixins"))
-    // 无用之物：其通用机械增强与本模组公式/上限/显示全面冲突，
-    // 经字节码级排查与实测后决定不兼容（FML 直接拒绝两者共存）。
-    add(ModDep.incompatible("useless_mod", "0.0.0".gte(), "Conflicting Mekanism upgrade overrides"))
+    // 无用之物：1.0.4 起改为共存 —— 它的通用机械增强（升级公式 / 升级上限 / 四台机器的
+    // 每 tick 多件 / 弹出器延迟）与本模组完全重合，由本模组的 MixinUselessMod* 系列逐个掐掉它的注入点，
+    // 详见 README「与无用之物共存」一节。它其余功能（合金炉、牛肉工具、矿物生成器等）不受影响。
 }
 
 // 【合并改动】单一元数据任务；at 参数让 mods.toml 声明 core 源码集里的访问转换器

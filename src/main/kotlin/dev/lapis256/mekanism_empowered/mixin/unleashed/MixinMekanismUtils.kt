@@ -28,9 +28,14 @@ import kotlin.math.pow
  *
  * 现状：为了让合并版在**其他同样接管公式的模组**（如 UselessMod 的
  * Mekanism 升级模块，它在 HEAD 直接 setReturnValue 截胡整个方法）存在时
- * 依然生效，改为 **HEAD 注入 + 高优先级 + cancel** 的整体接管：
+ * 依然生效，改为 **HEAD 注入 + 低优先级 + cancel** 的整体接管：
  *
- * - `priority = 2000`（高于默认 1000）保证本模组的回调最先执行；
+ * - `priority = 500`（低于默认 1000）保证本模组的回调最先执行。
+ *   Mixin 是**按优先级升序应用**的（见 MixinInfo#compareTo），优先级越低
+ *   越先应用，同一个注入点上的回调也越先执行；先 cancel 者胜。
+ *   1.0.3 之前这里写的是 2000，方向反了 —— 实测无用之物的回调排在
+ *   我们前面，它一 cancel 我们就再也不会执行，这才是"增强升级失效"
+ *   的真正原因；
  * - 先 cancel 者胜，后续回调与方法体都不会再跑；
  * - 回调内部按"原版公式 → 本模组第一层 → Empowered 第二层 → 编码"
  *   的顺序完整复现整条链（直接调用 Empowered 的 mixin 实现函数），
@@ -41,7 +46,7 @@ import kotlin.math.pow
  *
  * 合并自 Mekanism Unleashed (WhitePhant0m)。
  */
-@Mixin(value = [MekanismUtils::class], remap = false, priority = 2000)
+@Mixin(value = [MekanismUtils::class], remap = false, priority = 500)
 class MixinMekanismUtils {
 
     /*
